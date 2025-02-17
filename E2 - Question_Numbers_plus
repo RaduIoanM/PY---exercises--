@@ -1,0 +1,224 @@
+# # Question 1 - There are two 3-digit numbers n having the property that n is divisible by 11 and n / 11 is equal to the sum of the squares of the digits of n.
+
+# # print ([n for n in range(110,1000,11) if n/11 == sum([int(d)**2 for d in str(n)])])
+
+# # Question 2 - Write a program to generate the following sequence of numbers:  1 2 4 8 16 22 26 38 62 74 102 122...
+
+# # num = 1 
+# # n1 = num%10
+# # print(n1)
+
+# # num2a = num * num
+# # num2 = num2a + num2a
+# # print(num2)
+
+# # num3a = num2 * 1
+# # num3 = num3a + num3a
+# # print(num3)
+
+# # num4a = num3 * 1
+# # num4 = num4a + num4a
+# # print(num4)
+
+# # num5a = num4 % 10 
+# # num5b = num4 % 100
+# # num5 = num5a * 1 + num5a
+# # print(num5)
+
+# # num6a =  num5%10
+# # num6b = num5//10
+# # num6 = num5 + num6a
+# # print(num6)
+
+
+# # num7a = num6%10 * num6%10
+# # num7 = num6 + num7a
+# # print(num7)
+
+# # num8a = (num7//10) * (num7%10)
+# # num8 = num7 + num8a
+# # print(num8)
+
+# # num9a = (num8//10) * (num8%10)
+# # num9 = num8 + num9a
+# # print(num9)
+
+# # num10a = (num9//10) * (num9%10)
+# # num10 = num9 + num10a
+# # print(num10)
+
+# # num11a = (num10//10) * (num10%10)
+# # num11 = num10 + num11a
+# # print(num11)
+
+# # num12a = (num11//10) * (num11%10)
+# # num12 = num11 + num12a
+# # print(num12)
+
+# # # for n in 10 ?
+
+# # Question 3 - Write a program to implement the Lychrel algorithm
+
+# pal = 0
+# nopal = 1
+# x = 0 
+
+# while pal != nopal:
+
+#     print('Insert input')
+
+#     a = input()
+#     input_a = int(a)
+#     input_a2 = input_a
+#     input_a3 = input_a
+    
+#     #count the decimal number 
+#     count = 0
+
+#     while input_a != 0:
+#         input_a = input_a // 10
+#         count = count + 1
+
+#     print('Number of digits: ' + str(count))
+
+#     reverse_a = count
+#     reverse_digits = 0
+
+#     # reverse number 
+
+#     while reverse_a > 0:
+#         reverse_digits = reverse_digits * 10 + input_a2 % 10 
+#         input_a2 = input_a2 // 10
+#         reverse_a = reverse_a - 1
+
+#     print('Reverse digits are ' + str(reverse_digits)) 
+
+#     # sum up numbers and checks if it is a palindrome or not 
+#     sum = input_a3 + reverse_digits
+#     sum_2 = sum
+#     print('Sum of ' + str(input_a3) + ' and ' + str(reverse_digits) + ' is ' + str(sum))
+
+#     sum_reverse = 0 
+
+#     while sum > 0:
+#         sum_reverse = sum_reverse * 10 + sum % 10 
+#         sum = sum // 10
+        
+#     print('The reverse of this sum is ' + str(sum_reverse))
+
+   
+#     if sum_2 == sum_reverse :
+#         total = sum_reverse
+#         print('The number ' + str(total) + ' is a pallindrome and numeric')
+#     else:
+#         total = sum_2 
+#         print('The ' + str(total) + ' NOT yet a PALINDROME so reverse digits')
+#         total = sum_reverse 
+#         print(str(total) + ' will be added to the total sum')
+
+#     # finish the palindrome loop until the total sum is a palindrome
+
+#     pal = total
+#     p = pal
+   
+#     while p > 0:
+#             no_pal = pal * 10 + pal % 10 
+#             pal = pal // 10
+#             x = x + 1
+#     if total == no_pal:
+#         print ('Pallindrome and numeric, exercise done after ' + str(x) + 'steps' )
+#         pal = nopal
+#     else:
+#         pal = 0
+#         print('Not a pallindrome yet')
+        
+
+# Question 4 - The International Standard Book Number (ISBN)        
+
+# print('Input the first 9 digits: ')
+# digits_9 = input()
+# d_9 = int(digits_9)
+# n_1 = digits_9[0]
+# n_2 = digits_9[1]
+# n_3 = digits_9[2]
+# n_4 = digits_9[3]
+# n_5 = digits_9[4]
+# n_6 = digits_9[5]
+# n_7 = digits_9[6]
+# n_8 = digits_9[7]
+# n_9 = digits_9[8]
+
+# # sum up the numbers
+# n_1 = int(n_1)  * 10
+# print(n_1)
+# n_2 = int(n_2) * 9
+# print(n_2)
+# n_3 = int(n_3) * 8
+# print(n_3)
+# n_4 = int(n_4) * 7
+# print(n_4)
+# n_5 = int(n_5) * 6
+# print(n_5)
+# n_6 = int(n_6) * 5
+# print(n_6)
+# n_7 = int(n_7) * 4
+# print(n_7)
+# n_8 = int(n_8) * 3
+# print(n_8)
+# n_9 = int(n_9) * 2
+# print(n_9)
+
+# total = n_1+n_2+n_3+n_4+n_5+n_6+n_7+n_8+n_9
+# print('Total sum is ' + str(total) )
+
+# print()
+
+# # get the next multiple for even or odd numbers
+
+# if total % 11 != 0:
+#     next = (total // 11) + 1
+#     print('The next multiple is ' + str(next))
+# else:
+#     next = (total // 11) 
+#     print('The next multiple is ' + str(next))
+
+# print()
+
+# #get the difference until the next multiple and print ISBN
+
+# check_digit = next * 11 - total
+# if check_digit == 10:
+#     check_digit = 'X'
+#     print('The check digit is '+ str(check_digit))
+# else:
+#     check_digit = next * 11 - total
+#     print('The check digit is '+ str(check_digit))
+
+# print()
+# print('The final ISBN is ')
+# print(str(digits_9)+str(check_digit))
+
+# print()
+
+
+# Question 5 - The Collatz Conjecture 
+
+print('Input a positive integer')
+n = input()
+n = int(n)
+z = 0
+
+print() 
+
+while n != 1:
+    if n % 2 == 0:
+        n = n //2
+    else:
+        n = n * 3 + 1
+    z = z+1
+    print(n)
+
+print(f'Number of steps to get to 1 is equal to {z}')        
+
+
+
